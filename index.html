@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>素廓 Sukuo — 当代时尚女装与都市廓形衣橱</title>
+  <meta name="description" content="素廓 Sukuo 面向 15–40 岁女性的当代独立女装买手官网：探索本季 Lookbook 整套穿搭热区导购、建筑感廓形剪裁与精纺天然面料单品。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要内容</a>
+
+  <!-- Sticky Navigation Header -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand-mark" href="#top" aria-label="素廓 Sukuo 首页">
+        <span class="brand-cn">素廓</span>
+        <span class="brand-latin">Sukuo</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="主导航">
+        <a class="nav-link is-active" href="#hero">本季型录</a>
+        <a class="nav-link" href="#lookbook">穿搭导购</a>
+        <a class="nav-link" href="#catalog">全部单品</a>
+        <a class="nav-link" href="#atelier">版型工坊</a>
+        <a class="nav-link" href="#story">品牌理念</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-action" type="button" id="searchToggleBtn" aria-expanded="false" aria-controls="searchBarPanel" aria-label="展开搜索">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" /></svg>
+          <span class="icon-action-text">搜索</span>
+        </button>
+
+        <button class="icon-action" type="button" id="wishlistOpenBtn" aria-label="打开收藏夹">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.4l-1.35-1.23C5.6 14.6 2.5 11.8 2.5 8.3A4.7 4.7 0 0 1 7.2 3.6c1.66 0 3.25.8 4.2 2.08A5.25 5.25 0 0 1 15.6 3.6a4.7 4.7 0 0 1 4.7 4.7c0 3.5-3.1 6.3-8.15 10.87L12 20.4z" /></svg>
+          <span class="icon-action-text">收藏</span>
+          <span class="action-count is-zero tabular" id="wishlistCountBadge">0</span>
+        </button>
+
+        <button class="icon-action" type="button" id="bagOpenBtn" aria-label="打开购物袋">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z" /><path d="M9 8V6a3 3 0 0 1 6 0v2" /></svg>
+          <span class="icon-action-text">购物袋</span>
+          <span class="action-count is-zero tabular" id="bagCountBadge">0</span>
+        </button>
+
+        <button class="icon-action mobile-menu-btn" type="button" id="mobileMenuBtn" aria-expanded="false" aria-controls="mobileNavPanel" aria-label="展开菜单">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Expandable Search Panel -->
+    <div class="search-bar-panel" id="searchBarPanel" hidden>
+      <div class="container search-bar-inner">
+        <div class="search-input-wrap">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" /></svg>
+          <input class="search-input" type="search" id="catalogSearchInput" placeholder="搜索大衣、醋酸长裙、美利奴羊毛、阔腿裤或风格关键词..." autocomplete="off" />
+          <button class="search-clear-btn" type="button" id="searchClearBtn" aria-label="清空搜索" hidden>&times;</button>
+        </div>
+        <div class="search-quick-tags" aria-label="热门搜索词">
+          <button class="search-tag-btn" type="button" data-quick-search="大衣">双面羊绒</button>
+          <button class="search-tag-btn" type="button" data-quick-search="西装">冷灰西装</button>
+          <button class="search-tag-btn" type="button" data-quick-search="醋酸">勃艮第长裙</button>
+          <button class="search-tag-btn" type="button" data-quick-search="百褶">百褶裙</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Panel -->
+    <nav class="mobile-nav-panel" id="mobileNavPanel" aria-label="移动端导航" hidden>
+      <ul class="mobile-nav-list">
+        <li><a class="mobile-nav-link" href="#hero">本季型录</a></li>
+        <li><a class="mobile-nav-link" href="#lookbook">穿搭导购</a></li>
+        <li><a class="mobile-nav-link" href="#catalog">全部单品</a></li>
+        <li><a class="mobile-nav-link" href="#atelier">版型工坊</a></li>
+        <li><a class="mobile-nav-link" href="#story">品牌理念</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- 1. Asymmetric Editorial Hero -->
+    <section class="hero-section" id="hero" aria-label="本季主推型录">
+      <div class="hero-grid">
+        <div class="hero-editorial">
+          <div>
+            <p class="hero-season" id="heroSeasonTag">2026 秋冬廓形季</p>
+            <h1 class="hero-headline" id="heroHeadline">剪裁保有分寸，风格跨越年龄</h1>
+            <p class="hero-lead" id="heroLead">素廓以克制的建筑感剪裁与天然精纺面料，为不同生活阶段的女性构筑可长期叠穿的当代衣橱。从校园与工作室到晚间聚会，只需调整层次，不必更换自我。</p>
+            <div class="hero-cta-row">
+              <a class="btn btn-primary" href="#lookbook" id="heroPrimaryCta">探索整套穿搭</a>
+              <a class="btn btn-secondary" href="#catalog">浏览全部单品</a>
+            </div>
+          </div>
+
+          <div class="hero-switcher" aria-label="切换首屏主推造型">
+            <p class="hero-switcher-label">本季焦点轮廓预览</p>
+            <div class="hero-switcher-list" id="heroSwitcherList"></div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img class="hero-photo" id="heroPhoto" src="assets/images/hero_campaign.jpg" alt="素廓 Sukuo 2026 秋冬廓形季主推长风衣造型画报" />
+          <div class="hero-caption-bar">
+            <div>
+              <div class="hero-caption-title" id="heroCaptionTitle">解构防风廓形长风衣</div>
+              <div class="hero-caption-meta" id="heroCaptionMeta">都市松弛主推造型 · 轻盈垂坠抗皱混纺</div>
+            </div>
+            <button class="hero-caption-action" type="button" id="heroCaptionBtn">查看搭配详情</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Signature Centerpiece: Lookbook Hotspot Stage -->
+    <section class="section-block section-gallery" id="lookbook" aria-labelledby="lookbookHeading">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title" id="lookbookHeading">整套穿搭热区导购</h2>
+            <p class="section-subtitle">点击画报中的衣物锚点，查看每件单品的版型细节，或一键收入整套搭配享受组合礼遇。</p>
+          </div>
+          <div class="lookbook-tabs" id="lookbookTabs" role="tablist" aria-label="选择穿搭造型"></div>
+        </div>
+
+        <div class="lookbook-stage">
+          <!-- Interactive Photo + Hotspot Pins -->
+          <div class="lookbook-canvas" id="lookbookCanvas">
+            <img class="lookbook-photo" id="lookbookPhoto" src="" alt="" />
+            <div class="hotspot-layer" id="hotspotLayer"></div>
+            <div class="lookbook-hint" aria-hidden="true">点击光点切换单品焦点</div>
+          </div>
+
+          <!-- Synchronized Outfit Breakdown Rail -->
+          <aside class="lookbook-rail" aria-label="当前造型单品清单">
+            <div>
+              <div class="lookbook-rail-head">
+                <div class="lookbook-rail-meta">
+                  <span class="lookbook-mood-tag" id="lookMoodTag">青春松弛</span>
+                  <span class="lookbook-count-note" id="lookCountNote">共 4 件搭配单品</span>
+                </div>
+                <h3 class="lookbook-rail-title" id="lookTitle">松弛学院叠穿</h3>
+                <p class="lookbook-rail-desc" id="lookDesc"></p>
+              </div>
+              <div class="lookbook-items-list" id="lookItemsList"></div>
+            </div>
+
+            <div class="look-bundle-bar">
+              <div class="look-bundle-summary">
+                <div>
+                  <span class="look-bundle-label" id="bundleLabel">整套 4 件组合购</span>
+                  <span class="look-bundle-savings" id="bundleSavingsNote">整套选购立减 ¥120 搭配礼遇</span>
+                </div>
+                <div class="look-bundle-prices tabular">
+                  <span class="look-bundle-original" id="bundleOriginalPrice">¥0</span>
+                  <span class="look-bundle-final" id="bundleFinalPrice">¥0</span>
+                </div>
+              </div>
+              <button class="btn btn-bordeaux look-bundle-btn" type="button" id="addBundleBtn">整套加入购物袋</button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Curated Collection Catalog (12 SKUs) -->
+    <section class="section-block section-plaster" id="catalog" aria-labelledby="catalogHeading">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title" id="catalogHeading">本季全部单品</h2>
+            <p class="section-subtitle">每件单品均支持实拍图与工业制版平面图切换，直观核对肩线、腰褶与衣长比例。</p>
+          </div>
+        </div>
+
+        <div class="catalog-toolbar">
+          <div class="toolbar-primary">
+            <div class="category-tabs" id="categoryTabs" role="tablist" aria-label="按品类筛选"></div>
+            <div class="toolbar-right">
+              <span class="catalog-count tabular" id="catalogCountText" aria-live="polite">共 12 件单品</span>
+              <label class="sr-only" for="catalogSortSelect">排序方式</label>
+              <select class="sort-select" id="catalogSortSelect">
+                <option value="featured">编辑推荐</option>
+                <option value="price-asc">价格从低到高</option>
+                <option value="price-desc">价格从高到低</option>
+                <option value="newest">最新上架</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="toolbar-secondary">
+            <div class="mood-pills" id="moodPills" aria-label="按穿衣氛围筛选"></div>
+            <div id="activeFilterChips"></div>
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+
+        <div class="catalog-empty" id="catalogEmpty" hidden>
+          <h3 class="catalog-empty-title">暂无符合当前筛选条件的单品</h3>
+          <p class="catalog-empty-desc">尝试放宽风格筛选或清空搜索关键词，查看本季全部 12 款单品。</p>
+          <button class="btn btn-primary btn-sm" type="button" id="resetFiltersBtn">重置全部筛选</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Silhouette & Fabric Archive -->
+    <section class="section-block section-gallery" id="atelier" aria-labelledby="atelierHeading">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title" id="atelierHeading">廓形与织物工坊</h2>
+            <p class="section-subtitle">素廓不以年龄划分衣橱，而是以三大经得起时间检验的建筑感剪裁结构，自然贴合不同身高与身形。</p>
+          </div>
+          <div class="atelier-tabs" id="atelierTabs" role="tablist" aria-label="切换经典廓形"></div>
+        </div>
+
+        <div class="atelier-stage">
+          <div class="atelier-blueprint" id="atelierBlueprint"></div>
+          <div class="atelier-info">
+            <h3 class="atelier-info-title" id="atelierTitle"></h3>
+            <p class="atelier-info-summary" id="atelierSummary"></p>
+            <div class="atelier-fit-note" id="atelierFitNote"></div>
+            <div class="metric-list" id="atelierMetrics"></div>
+            <div class="atelier-actions">
+              <button class="btn btn-primary" type="button" id="atelierFilterBtn">查看同廓形单品</button>
+              <a class="btn btn-secondary" href="#lookbook">对照真人上身型录</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Brand Story & Service Commitments -->
+    <section class="section-block section-plaster" id="story" aria-labelledby="storyHeading">
+      <div class="container">
+        <div class="story-grid">
+          <div>
+            <h2 class="story-title" id="storyHeading">不被数字定义年龄，只以剪裁表达分寸</h2>
+          </div>
+          <div>
+            <p class="story-copy">二十岁偏爱的松弛针织与百褶层次，三十岁信赖的挺括西装与斜裁真丝，在素廓的买手空间里被自然编织进同一套色调与版型语言。我们精选澳洲美利奴羊毛、高支精梳长绒棉与日本醋酸缎面，去掉多余装饰，让衣服退回穿着者本人之后。</p>
+            <div class="story-pillars">
+              <div>
+                <h3 class="pillar-title">七日居家无忧试穿</h3>
+                <p class="pillar-desc">保留完整吊牌即可在签收七日内免费顺丰上门取退换，安心在家搭配既有衣橱。</p>
+              </div>
+              <div>
+                <h3 class="pillar-title">满 ¥599 顺丰冷链级包装</h3>
+                <p class="pillar-desc">外套与裙装均配有防尘衣罩与立体支撑衬纸，开箱即享平整悬垂状态。</p>
+              </div>
+              <div>
+                <h3 class="pillar-title">天然纤维养护指南</h3>
+                <p class="pillar-desc">随单附赠对应面料的蒸汽熨烫与收纳指引卡片，延长羊毛与醋酸单品穿着周期。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div>
+            <span class="footer-brand-cn">素廓</span>
+            <span class="footer-brand-latin">Sukuo</span>
+          </div>
+          <p class="footer-about">当代独立女装与都市买手衣橱。订阅季刊，提前获取新季型录预览、会员专属体验券（输入 SUKUO10 享九折）。</p>
+          <form class="newsletter-form" id="newsletterForm" novalidate>
+            <label class="sr-only" for="newsletterEmail">电子邮箱</label>
+            <input class="newsletter-input" type="email" id="newsletterEmail" placeholder="输入您的电子邮箱" required />
+            <button class="newsletter-btn" type="submit">订阅季刊</button>
+          </form>
+          <p class="newsletter-msg" id="newsletterMsg" aria-live="polite"></p>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">浏览系列</h3>
+          <ul class="footer-links">
+            <li><a class="footer-link" href="#lookbook">本季穿搭热区导购</a></li>
+            <li><a class="footer-link" href="#catalog" data-footer-cat="外套与大衣">外套与大衣</a></li>
+            <li><a class="footer-link" href="#catalog" data-footer-cat="上装与针织">上装与针织</a></li>
+            <li><a class="footer-link" href="#catalog" data-footer-cat="裙装与连衣裙">裙装与连衣裙</a></li>
+            <li><a class="footer-link" href="#catalog" data-footer-cat="裤装">裤装与丹宁</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">剪裁与服务</h3>
+          <ul class="footer-links">
+            <li><a class="footer-link" href="#atelier">三大经典廓形档案</a></li>
+            <li><a class="footer-link" href="#story">面料与养护说明</a></li>
+            <li><a class="footer-link" href="#story">配送与七日试穿保障</a></li>
+            <li><a class="footer-link" href="#catalog" data-footer-cat="包袋配饰">皮具与雕塑包袋</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">线下展厅</h3>
+          <ul class="footer-links">
+            <li><span class="footer-link">上海安福路 188 号素廓空间</span></li>
+            <li><span class="footer-link">北京三里屯北区画廊店</span></li>
+            <li><span class="footer-link">杭州天目里设计买手馆</span></li>
+            <li><span class="footer-link">营业时间 10:30 – 21:30</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 素廓 Sukuo Studio. 保留所有权利。</span>
+        <span>模拟体验优惠码：SUKUO10（整单九折）</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared Backdrop -->
+  <div class="overlay-backdrop" id="overlayBackdrop" hidden></div>
+
+  <!-- Product Detail Modal -->
+  <div class="product-modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle" hidden>
+    <div class="product-modal-card">
+      <div class="modal-media-col">
+        <div class="modal-media-stage" id="modalMediaStage"></div>
+        <div class="modal-view-switch" role="tablist" aria-label="切换商品视图">
+          <button class="modal-view-btn is-active" type="button" id="modalPhotoViewBtn">棚拍实景图</button>
+          <button class="modal-view-btn" type="button" id="modalFlatViewBtn">制版线稿与尺寸</button>
+        </div>
+      </div>
+
+      <div class="modal-info-col" id="modalInfoCol"></div>
+    </div>
+  </div>
+
+  <!-- Shopping Bag Drawer -->
+  <aside class="side-drawer" id="bagDrawer" role="dialog" aria-modal="true" aria-labelledby="bagDrawerTitle" hidden>
+    <div class="drawer-head">
+      <h2 class="drawer-title" id="bagDrawerTitle">购物袋</h2>
+      <button class="close-icon-btn" type="button" data-close-overlay aria-label="关闭购物袋">
+        <svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.8"><path d="M18 6L6 18M6 6l12 12" /></svg>
+      </button>
+    </div>
+    <div class="shipping-meter" id="shippingMeter"></div>
+    <div class="drawer-body" id="bagDrawerBody"></div>
+    <div class="drawer-footer" id="bagDrawerFooter"></div>
+  </aside>
+
+  <!-- Wishlist Drawer -->
+  <aside class="side-drawer" id="wishlistDrawer" role="dialog" aria-modal="true" aria-labelledby="wishlistDrawerTitle" hidden>
+    <div class="drawer-head">
+      <h2 class="drawer-title" id="wishlistDrawerTitle">我的收藏夹</h2>
+      <button class="close-icon-btn" type="button" data-close-overlay aria-label="关闭收藏夹">
+        <svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.8"><path d="M18 6L6 18M6 6l12 12" /></svg>
+      </button>
+    </div>
+    <div class="drawer-body" id="wishlistDrawerBody"></div>
+  </aside>
+
+  <!-- Live Toast Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
